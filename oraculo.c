@@ -46,7 +46,7 @@ int oraculo(int* g, int t)
 	
 	chute_par = (int*)calloc(5, sizeof(int));
 	chute_impar = (int*)calloc(4, sizeof(int));
-	chute = (int*)calloc(9, sizeof(int));//!!!!!!!!!!!!!!!!!!!!!!!!!
+	chute = (int*)calloc(9, sizeof(int));
 
 	/*
 		Primeira jogada deve ser aleatória.
@@ -75,11 +75,11 @@ int oraculo(int* g, int t)
 	if((!finalizar)&&(t == 2))
 	{
 		/*
-					[?][ ][ ]		   [?][ ][ ]
-			Situação 1:	[ ][?][ ] , melhor jogada: [ ][?][ ].
-				        [ ][ ][ ]                  [ ][ ][X]
+                        [?][ ][ ]                   [?][ ][ ]
+			Situação 1:	[ ][?][ ] , melhor jogada:  [ ][?][ ].
+				        [ ][ ][ ]                   [ ][ ][X]
 		*/
-		if((*(g + 0) + *(g + 4) + *(g + 8)) == Low + High)//talvez inutil!!!!!!!!!!!
+		if((*(g + 0) + *(g + 4) + *(g + 8)) == Low + High)
 		{
 			if(!(*(g + 0)))
 			{
@@ -106,9 +106,9 @@ int oraculo(int* g, int t)
 			}
 		}
 		/*
-					[ ][!][ ]		   [ ][!][ ]
-			Situação 2:	[!][ ][!] , melhor jogada: [!][X][!].
-				        [ ][!][ ]                  [ ][!][ ]
+                        [ ][!][ ]		             [ ][!][ ]
+			Situação 2:	[!][ ][!] , melhor jogada:   [!][X][!].
+				        [ ][!][ ]                    [ ][!][ ]
 		*/
 		else if((*(g + 1) + *(g + 3) + *(g + 5) + *(g + 7)) == Low + High)
 		{
@@ -116,9 +116,9 @@ int oraculo(int* g, int t)
 			finalizar = 1;
 		}
 		/*
-					[X][!][!]		   [X][!][!]
-			Situação 3:	[ ][ ][!] , melhor jogada: [ ][ ][!].
-				        [ ][!][!]                  [X][!][!]
+                        [X][!][!]                   [X][!][!]
+			Situação 3:	[ ][ ][!] , melhor jogada:  [ ][ ][!].
+				        [ ][!][!]                   [X][!][!]
 		*/
 		else if((*(g + 0) + *(g + 2) + *(g + 6) + *(g + 8)) >= High)
 		{
@@ -150,9 +150,9 @@ int oraculo(int* g, int t)
 			}
 		}
 		/*
-					[ ][ ][ ]		   [ ][ ][ ]
-			Situação 4:	[O][X][ ] , melhor jogada: [O][X][ ].
-					[ ][ ][ ]                  [ ][X][ ]
+                        [ ][ ][ ]                    [ ][ ][ ]
+			Situação 4:	[O][X][ ] , melhor jogada:   [O][X][ ].
+                        [ ][ ][ ]                    [ ][X][ ]
 		*/
 		else if((*(g + 1) + *(g + 3) + *(g + 5) + *(g + 7)) == Low)
 		{
@@ -168,9 +168,9 @@ int oraculo(int* g, int t)
 			}
 		}
 		/*
-					[ ][ ][ ]		 [ ][ ][ ]
-			Situação 5:	[X][O][ ] , jogada ruim: [X][O][X]. 
-					[ ][ ][ ]                [ ][ ][ ]
+                        [ ][ ][ ]                   [ ][ ][ ]
+			Situação 5:	[X][O][ ] , jogada ruim:    [X][O][X]. 
+                        [ ][ ][ ]                   [ ][ ][ ]
 		*/
 		else if(*(g + 4) == Low)
 		{
@@ -200,9 +200,9 @@ int oraculo(int* g, int t)
 			}
 		}
 		/*
-					 [ ][ ][ ]		   [ ][ ][ ]
-			Situação 6:	 [X][ ][ ], melhor jogada: [X][ ][ ]. 
-					 [ ][ ][O]                 [X][ ][O]
+                            [ ][ ][ ]		          [ ][ ][ ]
+			Situação 6:	    [X][ ][ ], melhor jogada: [X][ ][ ]. 
+                            [ ][ ][O]                 [X][ ][O]
 		*/
 		else if(!(*(g + 4)))
 		{
@@ -439,9 +439,9 @@ int oraculo(int* g, int t)
 				finalizar = 1;
 			}
 			/*
-						[ ][ ][ ]		 [ ][ ][X]
+                            [ ][ ][ ]		         [ ][ ][X]
 				Situação 3:	[O][X][ ] , jogada ruim: [O][X][ ]. 
-						[ ][O][ ]                [ ][O][ ]
+                            [ ][O][ ]                [ ][O][ ]
 			*/
 			else
 			{
@@ -499,9 +499,9 @@ int oraculo(int* g, int t)
 			}
 		}
 		/*
-					[X][!][X]		   [X][!][X]
-			Situação 2:	[!][ ][ ] , melhor jogada: [!][ ][ ]. 
-					[!][ ][ ]                  [!][ ][X]
+                        [X][!][X]		             [X][!][X]
+			Situação 2:	[!][ ][ ] , melhor jogada:   [!][ ][ ]. 
+                        [!][ ][ ]                    [!][ ][X]
 		*/
 		else if((*(g + 0) + *(g + 1) + *(g + 2) + *(g + 3) + *(g + 6)) == 2*High + 2*Low)
 		{
